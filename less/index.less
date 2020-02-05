@@ -53,7 +53,93 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+// variables
+@background: #efeded;
+@footer: #b2b2b2;
+@h2: 20px;
+
+// Mixins
+.flex-mixin{
+	display: flex;
 }
 
+html, body {
+	height: 100%;
+	// background-color: red;
+	width: 100%;
+	padding: 0 5%;
+	margin: 0 auto;
+}
+h1{
+	font-size: 40px;
+	padding: 3% 0% 3% 0%;
+}
+.navContainer{
+	.flex-mixin();
+	justify-content: flex-end;
+	padding: 5% 0% 5% 0%;
+}
+nav a{
+	padding: 0% 1.5% 0 1.5%;
+	color: black;
+	font-size: @h2;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.sectionOne{
+	background-color: @background;
+	padding: 3% 3%;
+	border-bottom: 5px dotted @background;
+}
+
+button{
+	font-size: @h2;
+}
+
+.sectionTwo{
+	.flex-mixin();
+	flex-direction: row;
+	padding: 3% 0% 3% 0%;
+}
+
+.whoAmI, .skillSet{
+	width: 50%;
+}
+
+.skillSet{
+	padding: 0% 20% 0% 20%;
+}
+
+p, li, address{
+	font-size: @h2;
+}
+
+h2{
+	font-size: @h2;
+	font-weight: 700;
+}
+
+footer{
+	background-color: @footer;
+	padding: 1% 2% 1% 2%;
+	margin-top: 5%;
+}
+
+table{
+	width: 100%;
+}
+
+td, th{
+	border: 1px solid #dddddd;
+	text-align:left;
+	padding:8px;
+}
+
+tr:nth-child(even){
+	background-color: #dddddd;
+}
+
+.sectionThree h2{
+	padding-bottom: 3%;
+}
