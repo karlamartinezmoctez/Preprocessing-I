@@ -133,6 +133,9 @@ table {
 .flex-mixin {
   display: flex;
 }
+.padding3 {
+  padding: 3% 0% 3% 0%;
+}
 html,
 body {
   height: 100%;
@@ -140,14 +143,16 @@ body {
   padding: 0 5%;
   margin: 0 auto;
 }
-h1 {
-  font-size: 40px;
-  padding: 3% 0% 3% 0%;
-}
 .navContainer {
   display: flex;
   justify-content: flex-end;
-  padding: 5% 0% 5% 0%;
+  padding: 3% 0% 3% 0%;
+}
+@media (max-width: 500px) {
+  .navContainer {
+    display: flex;
+    flex-direction: column;
+  }
 }
 nav a {
   padding: 0% 1.5% 0 1.5%;
@@ -161,7 +166,11 @@ nav a {
   padding: 3% 3%;
   border-bottom: 5px dotted #efeded;
 }
-button {
+.sectionOne h1 {
+  font-size: 40px;
+  padding: 3% 0% 3% 0%;
+}
+.sectionOne button {
   font-size: 20px;
 }
 .sectionTwo {
@@ -169,11 +178,17 @@ button {
   flex-direction: row;
   padding: 3% 0% 3% 0%;
 }
-.whoAmI,
-.skillSet {
+@media (max-width: 500px) {
+  .sectionTwo {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.sectionTwo .whoAmI,
+.sectionTwo .skillSet {
   width: 50%;
 }
-.skillSet {
+.sectionTwo .skillSet {
   padding: 0% 20% 0% 20%;
 }
 p,

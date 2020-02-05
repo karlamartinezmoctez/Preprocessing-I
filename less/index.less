@@ -62,6 +62,9 @@ table {
 .flex-mixin{
 	display: flex;
 }
+.padding3{
+	padding: 3% 0% 3% 0%;
+}
 
 html, body {
 	height: 100%;
@@ -70,14 +73,16 @@ html, body {
 	padding: 0 5%;
 	margin: 0 auto;
 }
-h1{
-	font-size: 40px;
-	padding: 3% 0% 3% 0%;
-}
+
 .navContainer{
 	.flex-mixin();
 	justify-content: flex-end;
-	padding: 5% 0% 5% 0%;
+	.padding3();
+	
+	@media(max-width: 500px) {
+		.flex-mixin();
+		flex-direction:column;	
+		}
 }
 nav a{
 	padding: 0% 1.5% 0 1.5%;
@@ -85,30 +90,42 @@ nav a{
 	font-size: @h2;
 	text-decoration: none;
 	font-weight: 700;
+
 }
 
 .sectionOne{
 	background-color: @background;
 	padding: 3% 3%;
 	border-bottom: 5px dotted @background;
+	
+	h1{
+		font-size: 40px;
+		.padding3();
+	}
+
+	button{
+		font-size: @h2;
+	}
 }
 
-button{
-	font-size: @h2;
-}
 
 .sectionTwo{
 	.flex-mixin();
 	flex-direction: row;
-	padding: 3% 0% 3% 0%;
-}
+	.padding3();
 
-.whoAmI, .skillSet{
-	width: 50%;
-}
+	@media(max-width: 500px) {
+		.flex-mixin();
+		flex-direction:column;	
+	}
 
-.skillSet{
-	padding: 0% 20% 0% 20%;
+	.whoAmI, .skillSet{
+		width: 50%;
+	}
+		
+	.skillSet{
+		padding: 0% 20% 0% 20%;
+	}
 }
 
 p, li, address{
@@ -140,6 +157,9 @@ tr:nth-child(even){
 	background-color: #dddddd;
 }
 
-.sectionThree h2{
-	padding-bottom: 3%;
+.sectionThree{
+
+	h2{
+		padding-bottom: 3%;
+	}
 }
